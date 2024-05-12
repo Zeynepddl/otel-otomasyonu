@@ -1,5 +1,4 @@
-﻿using OtelYonetimi;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -22,7 +21,7 @@ namespace OtelYonetimi
         {
             if (_instance == null)
             {
-                _instance = new KullaniciRepository("Data Source=DESKTOP-0K6KJK2\\SQLEXPRESS;Initial Catalog=OtelOtomasyonu;Integrated Security=True;");
+                _instance = new KullaniciRepository("Data Source=DESKTOP-0K6KJK2\\SQLEXPRESS;Initial Catalog=db_OtelOtomasyonu;Integrated Security=True;");
             }
             return _instance;
         }
@@ -55,7 +54,7 @@ namespace OtelYonetimi
                 string query = "SELECT * FROM kullanicilar";
                 using (var command = new SqlCommand(query, connection))
                 {
-                   var reader = command.ExecuteReader();
+                    var reader = command.ExecuteReader();
                     while (reader.Read())
                     {
                         Kullanici kullanici = new Kullanici();
@@ -88,6 +87,7 @@ namespace OtelYonetimi
                     command.Parameters.AddWithValue("@ad", kullanici.ad);
                     command.Parameters.AddWithValue("@soyad", kullanici.soyad);
                     command.Parameters.AddWithValue("@telefon", kullanici.telefon);
+                    command.Parameters.AddWithValue("@id", kullanici.id);
                     command.ExecuteNonQuery();
                 }
 
@@ -96,7 +96,6 @@ namespace OtelYonetimi
 
         public void Sil(Kullanici kullanici)
         {
-
             using (var connection = new SqlConnection(_connectionString))
             {
                 connection.Open();

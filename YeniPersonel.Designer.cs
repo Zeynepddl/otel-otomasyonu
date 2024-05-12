@@ -259,6 +259,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "YeniPersonel";
             this.Text = "YeniPersonel";
+            this.Load += new System.EventHandler(this.YeniPersonel_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

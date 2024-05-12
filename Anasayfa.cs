@@ -17,6 +17,7 @@ namespace OtelYonetimi
             InitializeComponent();
         }
 
+       
         private void button1_Click(object sender, EventArgs e)
         {
             PersonelGiris personelgiris = new PersonelGiris();

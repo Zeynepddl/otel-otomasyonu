@@ -36,5 +36,10 @@ namespace OtelYonetimi
             PersonelGiris personelgiris = new PersonelGiris();
             personelgiris.ShowDialog();
         }
+
+        private void YeniPersonel_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

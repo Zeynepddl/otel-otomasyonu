@@ -21,7 +21,7 @@ namespace OtelYonetimi
         {
             if (_instance == null)
             {
-                _instance = new RezervasyonRepository("Data Source=DESKTOP-0K6KJK2\\SQLEXPRESS;Initial Catalog=OtelOtomasyonu;Integrated Security=True;");
+                _instance = new RezervasyonRepository("Data Source=DESKTOP-0K6KJK2\\SQLEXPRESS;Initial Catalog=db_OtelOtomasyonu;Integrated Security=True;");
             }
             return _instance;
         }
@@ -53,8 +53,8 @@ namespace OtelYonetimi
             {
                 connection.Open();
                 string query = "SELECT * FROM rezervasyonlar " +
-                    "INNER JOIN odalar ON rezervasyonlar.oda_id = odalar.id" +
-                    "INNER JOIN kullanicilar ON rezervasyonlar.kullanici_id = kullanicilar.id" +
+                    "INNER JOIN odalar ON rezervasyonlar.oda_id = odalar.id " +
+                    "INNER JOIN kullanicilar ON rezervasyonlar.kullanici_id = kullanicilar.id " +
                     "INNER JOIN odemeler ON rezervasyonlar.odeme_id = odemeler.id";
                 using (var command = new SqlCommand(query, connection))
                 {
@@ -65,6 +65,8 @@ namespace OtelYonetimi
                         Oda oda = new Oda();
                         Kullanici kullanici = new Kullanici();
                         Odeme odeme = new Odeme();
+
+                        Console.WriteLine(reader);
 
                         rezervasyon.id = Convert.ToInt32(reader["id"]);
                         rezervasyon.girisZamani = Convert.ToDateTime(reader["girisZamani"]);
@@ -95,7 +97,6 @@ namespace OtelYonetimi
                         odeme.ucret = (double)Convert.ToDecimal(reader["ucret"]);
                         odeme.odemeTamamlandimi = Convert.ToBoolean(reader["odemeTamamlandimi"]);
                         odeme.kullanici = kullanici;
-                        odeme.rezervasyon = rezervasyon;
                         rezervasyon.odeme = odeme;
 
                         rezervasyonlar.Add(rezervasyon);
