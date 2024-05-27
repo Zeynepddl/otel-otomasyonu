@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace OtelYonetimi
 {
-     enum KullaniciTuru
-    {
-        personel,musteri
-    }
+      public enum KullaniciTuru
+     {
+        personel=0,
+        musteri=1,
+     }
 }

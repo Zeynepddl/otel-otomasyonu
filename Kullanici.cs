@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OtelYonetimi
 {
-    internal class Kullanici
+     public class Kullanici
     {
         public int id { get; set; }
         public string ad { get; set; }

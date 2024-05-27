@@ -12,7 +12,6 @@ namespace OtelYonetimi
         public int id { get; set; }
         public Kullanici kullanici { get; set; }
         public DateTime talepZamani { get; set; }
-        public string token { get; set; }
-        public DateTime tokenGecerlilikSuresi { get; set; }
+        public string yeniSifre { get; set; }
     }
 }

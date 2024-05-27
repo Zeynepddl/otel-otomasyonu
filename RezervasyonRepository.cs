@@ -139,5 +139,19 @@ namespace OtelYonetimi
                 }
             }
         }
+
+        public void SilOdayaGore(int odaId)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                string query = "DELETE FROM rezervasyonlar WHERE oda_id=@oda_id";
+                using (var command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@oda_id", odaId);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

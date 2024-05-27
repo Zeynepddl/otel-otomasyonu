@@ -11,9 +11,12 @@ namespace OtelYonetimi
     {
         private string _connectionString;
         private static OdaRepository _instance;
+        private RezervasyonRepository _rezervasyonRepository;
         public OdaRepository(string connectionString)
         {
             _connectionString = connectionString;
+            _rezervasyonRepository = RezervasyonRepository.GetInstance(); // 2. Adım: Yapıcıda başlatın.
+
         }
 
         public static OdaRepository GetInstance()
@@ -91,9 +94,11 @@ namespace OtelYonetimi
 
         public void Sil(Oda oda)
         {
-            using (var connection = new SqlConnection(_connectionString))//SqlConnection nesnesi için bir bağlantı oluşturur ve bu bağlantıyı kullanarak veritabanına bağlanır. 
+            using (var connection = new SqlConnection(_connectionString))
             {
                 connection.Open();
+                // Öncelikle, oda ile ilişkili rezervasyonları sil
+                _rezervasyonRepository.SilOdayaGore(oda.id);
                 string query = "delete from odalar where id=@id";
                 using (var command = new SqlCommand(query, connection))
                 {

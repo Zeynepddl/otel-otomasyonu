@@ -14,26 +14,117 @@ namespace OtelYonetimi
 {
     public partial class Uyeler : Form
     {
+        private KullaniciRepository kullaniciRepository;
         public Uyeler()
         {
             InitializeComponent();
+            kullaniciRepository = KullaniciRepository.GetInstance();
         }
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-0K6KJK2\\SQLEXPRESS;Initial Catalog=OtelOtomasyonu;Integrated Security=True;");
-                void personelListele()
-                {
-                    SqlDataAdapter da = new SqlDataAdapter("select * from Personel", con);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    dataGridView1.DataSource = dt;
-                }
+        void kullaniciListele(KullaniciTuru kullaniciTuru)
+        {
+            List<Kullanici> kullanicilar = kullaniciRepository.Listele(kullaniciTuru);
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ID", typeof(int));
+            dt.Columns.Add("Ad", typeof(string));
+            dt.Columns.Add("Soyad",typeof(string));
+            dt.Columns.Add("Telefon", typeof(string));
+            dt.Columns.Add("Email",typeof(string));
+            dt.Columns.Add("NormalizedEmail",typeof(string));
+            dt.Columns.Add("Sifre",typeof(string));
+            dt.Columns.Add("KullaniciTuru",typeof(bool));
+
+            foreach(Kullanici kullanici in kullanicilar) {
+                DataRow row = dt.NewRow();
+                row["ID"] = kullanici.id;
+                row["Ad"] = kullanici.ad;
+                row["Soyad"] = kullanici.soyad;
+                row["Telefon"] = kullanici.telefon;
+                row["Email"] = kullanici.email;
+                row["Sifre"] = kullanici.sifre;
+                row["NormalizedEmail"] = kullanici.normalizedEmail;
+                row["KullaniciTuru"] = kullanici.kullaniciTuru;
+
+                dt.Rows.Add(row);
+            }
+            
+            dataGridView1.DataSource = dt;
+        }
         private void Uyeler_Load(object sender, EventArgs e)
         {
-            personelListele();
+            kullaniciListele(KullaniciTuru.personel);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                {
+                    try
+                    {
+                        int kullaniciId = Convert.ToInt32(row.Cells["id"].Value);
+                        kullaniciRepository.KullaniciSil(kullaniciId);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Bir hata oluştu: " + ex.Message);
+                    }
+                }
+                kullaniciListele(KullaniciTuru.personel);
+                MessageBox.Show("Kullanıcı silindi.");
+            }
+            else
+            {
+                MessageBox.Show("Lütfen silmek için bir kullanıcı seçin.");
+            }
+
+
 
         }
+
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+                Kullanici kullanici = new Kullanici();
+                kullanici.id = Convert.ToInt32(selectedRow.Cells["id"].Value);
+                kullanici.ad = Convert.ToString(selectedRow.Cells["ad"].Value);
+                kullanici.soyad = Convert.ToString(selectedRow.Cells["soyad"].Value);
+                kullanici.telefon = Convert.ToString(selectedRow.Cells["telefon"].Value);
+                kullanici.email = Convert.ToString(selectedRow.Cells["email"].Value);
+                kullanici.normalizedEmail = Convert.ToString(selectedRow.Cells["normalizedEmail"].Value);
+                kullanici.sifre = Convert.ToString(selectedRow.Cells["sifre"].Value);
+                kullanici.kullaniciTuru = KullaniciTuru.personel;
+
+                kullaniciRepository.Guncelle(kullanici);
+
+
+                MessageBox.Show("Kullanıcı bilgileri güncellendi.");
+            }
+            else
+            {
+                MessageBox.Show("Lütfen güncellenecek bir kullanıcı seçin.");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            YeniPersonel yeniPersonel = new YeniPersonel();
+            yeniPersonel.FormClosed += YeniPersonel_FormClosed; // Form kapandığında çalışacak olay
+            yeniPersonel.ShowDialog();
+        }
+        private void YeniPersonel_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Form kapandığında DataGridView'i güncelle
+            kullaniciListele(KullaniciTuru.personel);
+        }
     }
+    
 }
