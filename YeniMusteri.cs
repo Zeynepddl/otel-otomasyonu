@@ -1,4 +1,5 @@
-﻿using System;
+﻿// ZEYNEP DAYAL - 262284037
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,7 +32,7 @@ namespace OtelYonetimi
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            if ((txtad.Text == "") || (txtsad.Text == "") || (txttel.Text == "") || (txtmail.Text == "") || (txtsfr.Text == ""))
+            if ((txtad.Text == "") || (txtsad.Text == "") || (txttel.Text == "") || txttel.MaskFull == false || (txtmail.Text == "") || (txtsfr.Text == ""))
             {
                 MessageBox.Show("Boş alan bırakılamaz");
                 return;

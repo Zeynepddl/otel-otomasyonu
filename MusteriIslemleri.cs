@@ -1,4 +1,5 @@
-﻿using System;
+﻿// ZEYNEP DAYAL - 262284037
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -303,6 +304,8 @@ namespace OtelYonetimi
             {
                 dateTimePicker2.Value = dateTimePicker1.Value.AddDays(1);
             }
+          
+            
             hesaplananUcretiGuncelle();
         }
 
@@ -311,8 +314,9 @@ namespace OtelYonetimi
             // Çıkış tarihi giriş tarihinden küçükse veya eşitse giriş tarihini çıkış tarihinden bir gün öncesi yap
             if (dateTimePicker2.Value.Date <= dateTimePicker1.Value.Date)
             {
-                dateTimePicker1.Value = dateTimePicker2.Value.AddDays(-1);
+                dateTimePicker1.Value = dateTimePicker2.Value.AddDays(-1);//-1" ifadesi, dateTimePicker2'nin değerini dateTimePicker1'den bir gün sonrası olarak belirlemek için kullanılır.
             }
+           
             hesaplananUcretiGuncelle();
         }
 

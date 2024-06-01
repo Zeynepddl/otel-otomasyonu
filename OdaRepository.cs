@@ -1,4 +1,5 @@
-﻿using System;
+﻿// ZEYNEP DAYAL - 262284037
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace OtelYonetimi
         public OdaRepository(string connectionString)
         {
             _connectionString = connectionString;
-            _rezervasyonRepository = RezervasyonRepository.GetInstance(); // 2. Adım: Yapıcıda başlatın.
+            _rezervasyonRepository = RezervasyonRepository.GetInstance();
 
         }
 

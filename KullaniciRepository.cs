@@ -1,4 +1,5 @@
-﻿using System;
+﻿// ZEYNEP DAYAL - 262284037
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -28,6 +29,24 @@ namespace OtelYonetimi
             return _instance;
         }
 
+        //Tabloda güncelleme yaparken o numaranın olduğu başka kayıt var mı yok mu kontrol eder.
+        public bool TelefonVarMi(string telefon ,int id)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                string query = "SELECT COUNT(*) FROM kullanicilar WHERE telefon = @Telefon AND id != @KullaniciId";
+                using (var command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Telefon", telefon);
+                    command.Parameters.AddWithValue("@KullaniciId", id);
+                    int count = (int)command.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+        }
+        // Yeni kullanıcı eklerken kullanılan metodlar
+        //Bu,yeni bir kullanıcı eklenirken aynı numaraya sahip başka bir kullanıcının olup olmadığını kontrol eder.
         public bool TelefonVarMi(string telefon)
         {
             using (var connection = new SqlConnection(_connectionString))
@@ -43,6 +62,22 @@ namespace OtelYonetimi
             }
         }
 
+        public bool EmailVarMi(string email, int id)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                string query = "SELECT COUNT(*) FROM kullanicilar WHERE email = @Email AND id != @KullaniciId";
+                using (var command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Email", email);
+                    command.Parameters.AddWithValue("@KullaniciId", id);
+
+                    int count = (int)command.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+        }
         public bool EmailVarMi(string email)
         {
             using (var connection = new SqlConnection(_connectionString))
@@ -220,7 +255,7 @@ namespace OtelYonetimi
             }
         }
 
-        internal Kullanici EmaildenKullanıcıGetir(string email)
+        internal Kullanici EmaildenKullaniciGetir(string email)
         {
             using (var connection = new SqlConnection(_connectionString))
             {

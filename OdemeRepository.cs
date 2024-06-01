@@ -1,4 +1,5 @@
-﻿using System;
+﻿// ZEYNEP DAYAL - 262284037
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Diagnostics.Eventing.Reader;
@@ -130,13 +131,11 @@ namespace OtelYonetimi
 
                 using (var command = new SqlCommand(query, connection))
                 {
-                    // Parametreleri ekleyin
+                    
                     command.Parameters.AddWithValue("@id", odeme.id);
                     command.Parameters.AddWithValue("@kullanici_id", odeme.kullanici.id);
                     command.Parameters.AddWithValue("@ucret", odeme.ucret);
                     command.Parameters.AddWithValue("@odemeTamamlandimi", odeme.odemeTamamlandimi);
-
-                    // Sorguyu çalıştırın
                     command.ExecuteNonQuery();
                 }
             }

@@ -62,3 +62,25 @@ C:\Users\Zeynep\Desktop\262284037\OtelYonetimi2\otel-otomasyonu\obj\Debug\OtelYo
 C:\Users\Zeynep\Desktop\262284037\OtelYonetimi2\otel-otomasyonu\obj\Debug\OtelYonetimi.csproj.CoreCompileInputs.cache
 C:\Users\Zeynep\Desktop\262284037\OtelYonetimi2\otel-otomasyonu\obj\Debug\OtelYonetimi.exe
 C:\Users\Zeynep\Desktop\262284037\OtelYonetimi2\otel-otomasyonu\obj\Debug\OtelYonetimi.pdb
+C:\Users\Zeynep\Desktop\262284037 Zeynep Dayal\OtelYonetimi2\otel-otomasyonu\bin\Debug\OtelYonetimi.exe.config
+C:\Users\Zeynep\Desktop\262284037 Zeynep Dayal\OtelYonetimi2\otel-otomasyonu\bin\Debug\OtelYonetimi.exe
+C:\Users\Zeynep\Desktop\262284037 Zeynep Dayal\OtelYonetimi2\otel-otomasyonu\bin\Debug\OtelYonetimi.pdb
+C:\Users\Zeynep\Desktop\262284037 Zeynep Dayal\OtelYonetimi2\otel-otomasyonu\obj\Debug\OtelYonetimi.csproj.AssemblyReference.cache
+C:\Users\Zeynep\Desktop\262284037 Zeynep Dayal\OtelYonetimi2\otel-otomasyonu\obj\Debug\OtelYonetimi.Anasayfa.resources
+C:\Users\Zeynep\Desktop\262284037 Zeynep Dayal\OtelYonetimi2\otel-otomasyonu\obj\Debug\OtelYonetimi.MusteriBilgi.resources
+C:\Users\Zeynep\Desktop\262284037 Zeynep Dayal\OtelYonetimi2\otel-otomasyonu\obj\Debug\OtelYonetimi.MusteriGiris.resources
+C:\Users\Zeynep\Desktop\262284037 Zeynep Dayal\OtelYonetimi2\otel-otomasyonu\obj\Debug\OtelYonetimi.MusteriIslemleri.resources
+C:\Users\Zeynep\Desktop\262284037 Zeynep Dayal\OtelYonetimi2\otel-otomasyonu\obj\Debug\OtelYonetimi.OdemeOnayla.resources
+C:\Users\Zeynep\Desktop\262284037 Zeynep Dayal\OtelYonetimi2\otel-otomasyonu\obj\Debug\OtelYonetimi.PersonelGiris.resources
+C:\Users\Zeynep\Desktop\262284037 Zeynep Dayal\OtelYonetimi2\otel-otomasyonu\obj\Debug\OtelYonetimi.PersonelIslemleri.resources
+C:\Users\Zeynep\Desktop\262284037 Zeynep Dayal\OtelYonetimi2\otel-otomasyonu\obj\Debug\OtelYonetimi.PersonelOdaIslem.resources
+C:\Users\Zeynep\Desktop\262284037 Zeynep Dayal\OtelYonetimi2\otel-otomasyonu\obj\Debug\OtelYonetimi.PersonelSatisIslem.resources
+C:\Users\Zeynep\Desktop\262284037 Zeynep Dayal\OtelYonetimi2\otel-otomasyonu\obj\Debug\OtelYonetimi.Properties.Resources.resources
+C:\Users\Zeynep\Desktop\262284037 Zeynep Dayal\OtelYonetimi2\otel-otomasyonu\obj\Debug\OtelYonetimi.SifremiKurtarmaFormu.resources
+C:\Users\Zeynep\Desktop\262284037 Zeynep Dayal\OtelYonetimi2\otel-otomasyonu\obj\Debug\OtelYonetimi.Uyeler.resources
+C:\Users\Zeynep\Desktop\262284037 Zeynep Dayal\OtelYonetimi2\otel-otomasyonu\obj\Debug\OtelYonetimi.YeniMusteri.resources
+C:\Users\Zeynep\Desktop\262284037 Zeynep Dayal\OtelYonetimi2\otel-otomasyonu\obj\Debug\OtelYonetimi.YeniPersonel.resources
+C:\Users\Zeynep\Desktop\262284037 Zeynep Dayal\OtelYonetimi2\otel-otomasyonu\obj\Debug\OtelYonetimi.csproj.GenerateResource.cache
+C:\Users\Zeynep\Desktop\262284037 Zeynep Dayal\OtelYonetimi2\otel-otomasyonu\obj\Debug\OtelYonetimi.csproj.CoreCompileInputs.cache
+C:\Users\Zeynep\Desktop\262284037 Zeynep Dayal\OtelYonetimi2\otel-otomasyonu\obj\Debug\OtelYonetimi.exe
+C:\Users\Zeynep\Desktop\262284037 Zeynep Dayal\OtelYonetimi2\otel-otomasyonu\obj\Debug\OtelYonetimi.pdb

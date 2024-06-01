@@ -35,8 +35,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -116,6 +116,16 @@
             this.panel1.Size = new System.Drawing.Size(562, 76);
             this.panel1.TabIndex = 39;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::OtelYonetimi.Properties.Resources.indir__5_1;
+            this.pictureBox1.Location = new System.Drawing.Point(468, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(91, 76);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 38;
+            this.pictureBox1.TabStop = false;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -127,16 +137,7 @@
             this.label3.Size = new System.Drawing.Size(207, 32);
             this.label3.TabIndex = 37;
             this.label3.Text = "Personel Giriş";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::OtelYonetimi.Properties.Resources.indir__5_1;
-            this.pictureBox1.Location = new System.Drawing.Point(468, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(91, 76);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 38;
-            this.pictureBox1.TabStop = false;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // PersonelGiris
             // 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿// ZEYNEP DAYAL - 262284037
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 namespace OtelYonetimi
 {
      public class Kullanici
-    {
+     {
         public int id { get; set; }
         public string ad { get; set; }
         public string soyad { get; set; }
@@ -16,5 +17,5 @@ namespace OtelYonetimi
         public string normalizedEmail { get; set; }
         public string sifre { get; set; }
         public KullaniciTuru kullaniciTuru { get; set; }
-    }
+     }
 }

@@ -32,8 +32,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -80,16 +80,6 @@
             this.panel1.Size = new System.Drawing.Size(450, 73);
             this.panel1.TabIndex = 3;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::OtelYonetimi.Properties.Resources.indir__11_;
-            this.pictureBox1.Location = new System.Drawing.Point(359, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(91, 73);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -100,6 +90,16 @@
             this.label2.Size = new System.Drawing.Size(199, 32);
             this.label2.TabIndex = 5;
             this.label2.Text = "Şifre Kurtarma";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::OtelYonetimi.Properties.Resources.indir__11_;
+            this.pictureBox1.Location = new System.Drawing.Point(359, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(91, 73);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // SifremiKurtarmaFormu
             // 
@@ -113,6 +113,7 @@
             this.Controls.Add(this.label1);
             this.Name = "SifremiKurtarmaFormu";
             this.Text = "SifremiKurtarmaFormu";
+            this.Load += new System.EventHandler(this.SifremiKurtarmaFormu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿// ZEYNEP DAYAL - 262284037
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -68,6 +69,11 @@ namespace OtelYonetimi
         {
             SifremiKurtarmaFormu sifremiKurtarmaFormu = new SifremiKurtarmaFormu();
             sifremiKurtarmaFormu.ShowDialog();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

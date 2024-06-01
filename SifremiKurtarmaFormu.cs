@@ -1,4 +1,5 @@
-﻿using System;
+﻿// ZEYNEP DAYAL - 262284037
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,7 +27,7 @@ namespace OtelYonetimi
         }
 
         private void button1_Click(object sender, EventArgs e) { 
-            Kullanici kullanici = kullaniciRepository.EmaildenKullanıcıGetir(textBox1.Text);
+            Kullanici kullanici = kullaniciRepository.EmaildenKullaniciGetir(textBox1.Text);
             if (kullanici != null) { 
                 string yeniSifre = RastgeleSifreUret(12);
                 emailSender.SifreKurtarmaMailiGonder(textBox1.Text, yeniSifre);
@@ -51,6 +52,11 @@ namespace OtelYonetimi
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             return new string(Enumerable.Repeat(chars, karakterSayisi)
                 .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
+        private void SifremiKurtarmaFormu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

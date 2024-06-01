@@ -1,4 +1,5 @@
-﻿using System;
+﻿// ZEYNEP DAYAL - 262284037
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -105,7 +106,8 @@ namespace OtelYonetimi
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-                Kullanici kullanici = new Kullanici();
+    
+                Kullanici kullanici = new Kullanici();                
                 kullanici.id = Convert.ToInt32(selectedRow.Cells["id"].Value);
                 kullanici.ad = Convert.ToString(selectedRow.Cells["ad"].Value);
                 kullanici.soyad = Convert.ToString(selectedRow.Cells["soyad"].Value);
@@ -114,6 +116,24 @@ namespace OtelYonetimi
                 kullanici.normalizedEmail = Convert.ToString(selectedRow.Cells["normalizedEmail"].Value);
                 kullanici.sifre = Convert.ToString(selectedRow.Cells["sifre"].Value);
                 kullanici.kullaniciTuru = KullaniciTuru.musteri;
+
+               
+
+                bool telefonVar = kullaniciRepository.TelefonVarMi(kullanici.telefon, kullanici.id);
+                bool emailVar = kullaniciRepository.EmailVarMi(kullanici.email, kullanici.id);
+
+                if (telefonVar)
+                {
+                    MessageBox.Show("Bu telefon numarası zaten kayıtlı.");
+                    return; 
+                }
+
+                if (emailVar)
+                {
+                    MessageBox.Show("Bu e-posta adresi zaten kayıtlı.");
+                    return; 
+                }
+                
 
                 kullaniciRepository.Guncelle(kullanici);
 

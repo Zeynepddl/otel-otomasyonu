@@ -1,4 +1,5 @@
-﻿using System;
+﻿// ZEYNEP DAYAL - 262284037
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -102,6 +103,22 @@ namespace OtelYonetimi
                 kullanici.normalizedEmail = Convert.ToString(selectedRow.Cells["normalizedEmail"].Value);
                 kullanici.sifre = Convert.ToString(selectedRow.Cells["sifre"].Value);
                 kullanici.kullaniciTuru = KullaniciTuru.personel;
+
+
+                bool telefonVar = kullaniciRepository.TelefonVarMi(kullanici.telefon, kullanici.id);
+                bool emailVar = kullaniciRepository.EmailVarMi(kullanici.email, kullanici.id);
+
+                if (telefonVar)
+                {
+                    MessageBox.Show("Bu telefon numarası zaten kayıtlı.");
+                    return;
+                }
+
+                if (emailVar)
+                {
+                    MessageBox.Show("Bu e-posta adresi zaten kayıtlı.");
+                    return;
+                }
 
                 kullaniciRepository.Guncelle(kullanici);
 
